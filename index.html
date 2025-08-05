@@ -232,10 +232,14 @@
                 formData.append('transactionType', document.getElementById('transactionType').value);
                 formData.append('fileDataArray', JSON.stringify(fileDataArray));
 
-                const actionUrl = "https://script.google.com/macros/s/AKfycbyO6HTGngYHD_ImaskwDZZLqU7NeELyVGYaOaYsWa2jaz-86oGPTIwPqJHR3xQrUpwDJQ/exec";
+                const actionUrl = "https://script.google.com/macros/s/AKfycbx04qCCepP65YDaWTtRnEDQduadJaiDD0hfw6NZCMSK_g7MnJAMDYuwxjt2i03wK176/exec";
                 
                 const response = await fetch(actionUrl, {
-                    method: "POST",
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                     body: formData
                 });
 
